@@ -87,6 +87,34 @@ public class BasicController {
         return "basic/attribute";
     }
 
+    @GetMapping("each")
+    public String each(Model model) {
+        addUser(model);
+        return "basic/each";
+    }
+
+    @GetMapping("condition")
+    public String condition(Model model) {
+        addUser(model);
+        return "basic/condition";
+    }
+
+    @GetMapping("comments")
+    public String comments(Model model) {
+        model.addAttribute("data", "Spring!");
+        return "basic/comments";
+    }
+
+    private void addUser(Model model) {
+        List<User> list = new ArrayList<>();
+        list.add(new User("userA", 10));
+        list.add(new User("userB", 20));
+        list.add(new User("userC", 30));
+
+        model.addAttribute("users", list);
+
+    }
+
     @Component("helloBean")
     static class HelloBean {
 
