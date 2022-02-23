@@ -21,6 +21,6 @@ public class TemplateController {
 
     @GetMapping("layoutExtend")
     public String layoutExtend() {
-        return "tempalte/layoutExtend/layoutExtendMain";
+        return "template/layoutExtend/layoutExtendMain";
     }
 }
